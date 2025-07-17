@@ -24,7 +24,7 @@ body {
   padding: 40px 0;
 }
 
-/* Navigation */
+
 header {
   background-color: #f5faff;
   color: #0047b3;
@@ -93,7 +93,7 @@ header::after {
   clear: both;
 }
 
-/* Hero Section with background image and overlay */
+
 #hero {
   position: relative;
   background: 
@@ -141,7 +141,7 @@ header::after {
   max-width: 520px;
 }
 
-/* New button under hero text */
+
 .hero-text .btn-learn-more {
   background-color: #0077ff;
   color: white;
@@ -161,13 +161,13 @@ header::after {
   transform: scale(1.05);
 }
 
-/* Hide the old hero image since background is used */
+
 .hero-img {
   flex: 1 1 280px;
   display: none;
 }
 
-/* Section Headings */
+
 section h2 {
   color: #0077ff;
   font-size: 2rem;
