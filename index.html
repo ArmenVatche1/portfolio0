@@ -26,14 +26,12 @@
     </div>
   </header>
 
-  <section id="hero">
-    <div class="container hero-grid">
+  <section id="hero" class="hero-banner">
+    <div class="container hero-content-wrapper">
       <div class="hero-text">
         <h2>Hello, I'm Armen Kevorkian</h2>
         <p>A second-year Computer Science BSc student at Newcastle University, passionate about building digital solutions and turning ideas into working code.</p>
-      </div>
-      <div class="hero-img">
-        <img src="IMG_1200.JPG" alt="Armen Kevorkian" />
+        <a href="#about" class="btn btn-primary btn-learn">Learn more about me</a>
       </div>
     </div>
   </section>
@@ -172,9 +170,31 @@
   <section id="education">
     <div class="container">
       <h2>Education</h2>
-      <p>Studying Computer Science BSc at Newcastle University, with a foundation in programming (Java, Python), algorithms, software engineering, and collaborative group projects. Expected graduation: 2027.</p>
+      <div class="education-cards">
+        <div class="education-card">
+          <img src="newcastle.png" alt="Newcastle University UK" />
+          <div class="education-info">
+            <h3>Newcastle University UK</h3>
+            <p class="education-desc">
+              In my first year, I focused on core computer science concepts including Java, Python, algorithms, and software engineering fundamentals. I participated in group projects and honed my problem-solving and coding skills.
+            </p>
+            <a href="https://www.ncl.ac.uk/undergraduate/degrees/g400/" target="_blank" class="read-more-btn">Read More</a>
+          </div>
+        </div>
+  
+        <div class="education-card">
+          <img src="kingsacademy.png" alt="King’s Academy" />
+          <div class="education-info">
+            <h3>King’s Academy</h3>
+            <p class="education-desc">
+              Completed high school with a focus on STEM subjects, building a strong foundation that prepared me for university studies in computer science and programming.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
+  
 
   <section id="contact">
     <div class="container">
@@ -193,6 +213,16 @@
       <p>&copy; 2025 Armen Kevorkian.</p>
     </div>
   </footer>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+
+<!-- Smooth scroll for the Learn More button -->
+<script>
+  document.querySelector('.btn-learn').addEventListener('click', e => {
+    e.preventDefault();
+    document.querySelector('#about').scrollIntoView({ behavior: 'smooth' });
+  });
+</script>
+
 </body>
 </html>
