@@ -28,7 +28,6 @@ body {
 header {
   background-color: #f5faff;
   color: #0047b3;
-  padding: 20px 0;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -94,13 +93,20 @@ header::after {
   clear: both;
 }
 
-/* Hero Section */
+/* Hero Section with background image and overlay */
 #hero {
-  background: linear-gradient(to bottom right, #cce0ff, #e6f0ff);
-  padding: 80px 0 60px;
-  text-align: center;
+  position: relative;
+  background: 
+    linear-gradient(rgba(0, 71, 179, 0.6), rgba(0, 71, 179, 0.6)),
+    url('IMG_1200.JPG') no-repeat;
+  background-position: 110% 35%; 
+  background-size: cover;
+  padding: 140px 0 100px;
+  color: white;
+  text-align: left;
   overflow: hidden;
 }
+
 
 .hero-grid {
   display: flex;
@@ -113,43 +119,52 @@ header::after {
 }
 
 .hero-text {
-  flex: 1 1 320px;
-  text-align: left;
+  flex: 1 1 400px;
   animation: fadeInUp 0.8s ease forwards;
   opacity: 0;
   transform: translateY(30px);
   animation-delay: 0.3s;
-  color: #0047b3;
+  color: white;
+  max-width: 600px;
 }
 
 .hero-text h2 {
-  font-size: 2.8rem;
+  font-size: 3rem;
   margin-bottom: 20px;
   font-weight: 700;
 }
 
+.hero-text p {
+  font-size: 1.3rem;
+  line-height: 1.5;
+  margin-bottom: 30px;
+  max-width: 520px;
+}
+
+/* New button under hero text */
+.hero-text .btn-learn-more {
+  background-color: #0077ff;
+  color: white;
+  padding: 12px 28px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 0 6px 12px rgba(0, 119, 255, 0.5);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  user-select: none;
+}
+
+.hero-text .btn-learn-more:hover {
+  background-color: #005ecb;
+  transform: scale(1.05);
+}
+
+/* Hide the old hero image since background is used */
 .hero-img {
   flex: 1 1 280px;
-  text-align: center;
-  animation: fadeInUp 0.8s ease forwards;
-  opacity: 0;
-  transform: translateY(30px);
-  animation-delay: 0.5s;
-}
-
-.hero-img img {
-  width: 250px;
-  max-width: 100%;
-  border-radius: 50%;
-  border: 4px solid #0077ff;
-  box-shadow: 0 10px 25px rgba(0, 119, 255, 0.25);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  cursor: pointer;
-}
-
-.hero-img img:hover {
-  transform: scale(1.07);
-  box-shadow: 0 15px 35px rgba(0, 119, 255, 0.45);
+  display: none;
 }
 
 /* Section Headings */
@@ -291,6 +306,89 @@ section h2 {
   background-color: #0077ff;
   color: white;
 }
+.education-cards {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.education-card {
+  background: #e6f0ff;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  width: 600px;
+  height: 250px;
+  display: flex;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.education-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 119, 255, 0.3);
+  background: #cce0ff;
+}
+
+.education-card img {
+  width: 40%;
+  object-fit: cover;
+  height: 100%;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+  flex-shrink: 0;
+}
+
+.education-info {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 60%;
+  color: #0047b3;
+}
+
+.education-info h3 {
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.education-desc {
+  font-size: 1rem;
+  color: #222;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.3s ease, max-height 0.3s ease;
+}
+
+.education-card:hover .education-desc {
+  opacity: 1;
+  max-height: 100px;
+}
+.read-more-btn {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 6px 14px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #0077ff;
+  border: 1px solid #0077ff;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+}
+
+.read-more-btn:hover {
+  background-color: #0077ff;
+  color: white;
+}
+
 
 /* Contact */
 #contact p {
@@ -333,7 +431,6 @@ section h2 {
   transform: scale(1.1);
 }
 
-
 /* Footer */
 footer {
   background-color: #f5faff;
@@ -369,6 +466,7 @@ footer {
 
   .hero-text {
     text-align: center;
+    max-width: 100%;
   }
 
   #about, #experience, #projects, #contact {
